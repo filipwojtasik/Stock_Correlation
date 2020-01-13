@@ -6,8 +6,8 @@ from newsapi import NewsApiClient
 
 
 
-newsapi = NewsApiClient(api_key='97daaf4147dc4277a56b4fb2106d4bcc')
-q='amazon'
+newsapi = NewsApiClient(api_key='xxxxxxx') #your newsapi key
+q='amazon'                                 #word which is found
 
 if not os.path.exists(q):
     os.makedirs(q)
@@ -18,8 +18,8 @@ for i in range(30):
     if i<3:
         d=i-15
         all_articles = newsapi.get_everything(q=q,
-                                              from_param=f'2019-10-{i+28}',
-                                              to=f'2019-10-{i+28}',
+                                              from_param=f'2019-10-{i+28}',             #start date
+                                              to=f'2019-10-{i+28}',                     #end date
                                               language='en',
                                               sort_by='popularity'
                                               ,page_size=100,
